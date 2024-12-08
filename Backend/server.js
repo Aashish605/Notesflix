@@ -14,8 +14,8 @@ import messageroute from "./Route/Message.route.js"
 import notesroute from "./Route/Notespdf.route.js"
 import paperpdfroute from "./Route/PaperPdf.route.js"
 
-app.use(cors())
 const app = express()
+app.use(cors())
 app.use(bodyParser.json());
 
 
