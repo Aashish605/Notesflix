@@ -1,0 +1,21 @@
+{
+    "title":"CSIT",
+    "data":[
+    {
+        "sem":"First Semester",
+        "subject":[
+            {
+                "name":"First Sem Syllabus"
+            }
+        ]
+    },
+    {
+        "sem":"Second Semester",
+        "subject":[
+            {
+                "name":"Second Sem Syllabus"
+            }
+        ]
+    }
+    ]
+}
