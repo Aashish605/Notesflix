@@ -26,22 +26,27 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 })
 
-mongoose.connect(Mongo, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-console.log("connected to Mongo");
+try {
+    mongoose.connect(Mongo, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    console.log("connected to Mongo");
 
+} catch (error) {
+    console.log(error);
+
+}
 
 let postData = null
 
-app.post('/course', bodyParser.text(), (req, res, next) => {
+app.post('/course',bodyParser.text(), (req, res, next) => {
     postData = req.body
     res.status(201).send({ message: 'Course created successfully' });
 });
 
 app.use('/notes', (req, res, next) => {
-    const name = postData
+    const name = postData 
     req.name = name;
     next();
 });
@@ -50,7 +55,7 @@ app.use('/notes', courseroute);
 
 
 app.use("/papers", (req, res, next) => {
-    const name = postData
+    const name = postData 
     req.name = name;
     next()
 }
@@ -72,7 +77,15 @@ app.use("/search", searchroute)
 
 let message = null
 
+app.post('/contact', (req, res,next) => {
+    app.use(bodyParser.json())
+    message = req.body
+    console.log(req.body);
+    console.log(message);
+    res.status(201).send({ message: 'Message sent successfully' });
+})
 
+app.use("/contact", messageroute)
 
 
 
@@ -82,7 +95,7 @@ app.use("/notespdf", (req, res, next) => {
     console.log(req.name);
     next()
 })
-app.use("/notespdf", notesroute)
+app.use("/notespdf",notesroute)
 
 app.use("/paperpdf", (req, res, next) => {
     const name = postData || "First Sem Paper"
@@ -90,6 +103,6 @@ app.use("/paperpdf", (req, res, next) => {
     console.log(req.name);
     next()
 })
-app.use("/paperpdf", paperpdfroute)
+app.use("/paperpdf",paperpdfroute)
 
 app.listen(PORT)    
