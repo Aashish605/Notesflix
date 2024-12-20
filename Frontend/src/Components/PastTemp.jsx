@@ -10,7 +10,7 @@ const Course = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://localhost:4000/course", `${course}`, {
+                const response = await axios.post("http://localhost:4000/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Course = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                const res = await axios.get(`https://localhost:4000/papers`);
+                const res = await axios.get(`http://localhost:4000/papers`);
                 setCourseData(res.data);
                 console.log(res.data);
             } catch (error) {

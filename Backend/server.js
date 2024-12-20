@@ -2,12 +2,10 @@ import express from "express";
 import dotenv from "dotenv"
 dotenv.config()
 import mongoose from "mongoose";
-import Grid from "gridfs-stream"
 import courseroute from "./Route/Course.route.js"
 import paperroute from "./Route/Papers.route.js"
 import cors from "cors"
 import bodyParser from "body-parser";
-import axios from "axios";
 import syllabusroute from "./Route/Syllabus.route.js"
 import searchroute from "./Route/Search.route.js"
 import messageroute from "./Route/Message.route.js"
@@ -41,12 +39,12 @@ try {
 let postData = null
 
 app.post('/course',bodyParser.text(), (req, res, next) => {
-    postData = req.body
+    postData = req.body 
     res.status(201).send({ message: 'Course created successfully' });
 });
 
 app.use('/notes', (req, res, next) => {
-    const name = postData 
+    const name = postData || "CSIT"
     req.name = name;
     next();
 });

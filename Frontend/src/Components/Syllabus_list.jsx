@@ -10,7 +10,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://localhost:4000/course", `${course}`, {
+                const response = await axios.post("http://localhost:4000/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                    const res = await axios.get(`https://localhost:4000/syllabus`);
+                    const res = await axios.get(`http://localhost:4000/syllabus`);
                     setCourseData(res.data);
             } catch (error) {
                 console.log(error);
@@ -46,7 +46,7 @@ const Syllabus_list = () => {
                         {CourseData.data && CourseData.data.map((i) => (
                             <div key={i.sem} className="m-8 w-full">
                                 <div className="w-[80vw] border-2 my-4 border-slate-800"></div>
-                                <h1 className="text-3xl mt-4">{i.sem} Notes</h1>
+                                <h1 className="text-3xl mt-4">{i.sem} Syllabus</h1>
                                 <div className="w-[80vw] flex flex-wrap gap-8 my-4 justify-center">
                                     {i.subjects.map((e) => (
                                         <NavLink

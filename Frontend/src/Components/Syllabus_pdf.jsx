@@ -11,7 +11,7 @@ const Syllabus_pdf = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://localhost:4000/course", `${subj}`, {
+                const response = await axios.post("http://localhost:4000/course", `${subj}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Syllabus_pdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`https://localhost:4000/notespdf`)
+                const response = await axios.get(`http://localhost:4000/notespdf`)
                 setCourseData(response.data)
                 console.log(response.data)
             } catch (error) {

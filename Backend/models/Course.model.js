@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const bookSchema = mongoose.Schema({
-    tilte:String,
+    title:String,
     data:Array
 })
 
