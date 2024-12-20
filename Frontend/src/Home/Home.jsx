@@ -52,7 +52,7 @@ const Home = () => {
                 <div className="w-[95vw] border-2 my-4 mx-auto border-slate-800"></div>
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-3xl md:text-4xl my-10 ">About Us</h1>
-                    <p className="w-[70vw] mx-auto  text-center" >Greetings! We are delighted to have you visit Notesflix, a helpful educational resource for students. Our website is dedicated to providing students with the tools and resources they need to succeed in their studies. We strive to make our materials easy to understand and relevant to students, offering a range of resources such as notes, pdf files, presentations, assignments, and notices. Our goal is to support students in overcoming any challenges they may face as they pursue their education . Thank you for choosing us as your go-to source for learning and support.</p>
+                    <p className="w-[70vw] mx-auto  text-center" >Greetings! We are delighted to have you visit Notesfelix, a helpful educational resource for students. Our website is dedicated to providing students with the tools and resources they need to succeed in their studies. We strive to make our materials easy to understand and relevant to students, offering a range of resources such as notes, pdf files, presentations, assignments, and notices. Our goal is to support students in overcoming any challenges they may face as they pursue their education . Thank you for choosing us as your go-to source for learning and support.</p>
                     <NavLink to='aboutus'><button className="px-4 py-6 w-fit my-8 bg-tertiary rounded-md text-white ">Learn More</button></NavLink>
                 </div>
             </div>

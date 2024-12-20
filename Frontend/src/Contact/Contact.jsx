@@ -51,9 +51,9 @@ const Contact = () => {
                 <div className="flex flex-col my-10 md:my-16 md:w-1/2">
                     <div className="mx-auto">
                         <h1 className="text-3xl my-4">Contact Us:</h1>
-                        <p className="flex my-4"><box-icon name='facebook-circle' type='logo' animation="tada-hover"></box-icon> &nbsp; Notesflix</p>
-                        <p className="flex my-4"><box-icon name='gmail' type='logo' animation="tada-hover"></box-icon>&nbsp;Notesflix@gmail.com</p>
-                        <p className="flex my-4"><box-icon name='telegram' type='logo' animation="tada-hover"></box-icon> &nbsp; Notesflix</p>
+                        <p className="flex my-4"><box-icon name='facebook-circle' type='logo' animation="tada-hover"></box-icon> &nbsp; Notesfelix</p>
+                        <p className="flex my-4"><box-icon name='gmail' type='logo' animation="tada-hover"></box-icon>&nbsp;Notesfelix@gmail.com</p>
+                        <p className="flex my-4"><box-icon name='telegram' type='logo' animation="tada-hover"></box-icon> &nbsp; Notesfelix</p>
                     </div>
                 </div>
             </div>

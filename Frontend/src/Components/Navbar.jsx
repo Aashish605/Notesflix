@@ -59,7 +59,7 @@ const Navbar = () => {
             </div>
             <div className='sticky top-0 z-10' >
             <div className=" hidden   md:flex justify-between items-center h-[9vh] w-full bg-primary shadow-md ">
-            <NavLink to=''><img src="/logo.png" alt="Notesflix logo" className=" lg:w-[45%] md:w-[60%] " /></NavLink>
+            <NavLink to=''><img src="/logo.png" alt="Notesfelix logo" className=" lg:w-[45%] md:w-[60%] " /></NavLink>
                     <div className="">
                         <ul className="flex flex-col md:flex-row gap-7 text-[1.05rem] ">
                             <li className=" px-3 flex items-center  " ><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/'>Home</NavLink></li>
