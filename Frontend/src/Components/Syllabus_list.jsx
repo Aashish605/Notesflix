@@ -10,7 +10,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("http://localhost:4000/course", `${course}`, {
+                const response = await axios.post("https://backend-eta-lac.vercel.app/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                    const res = await axios.get(`http://localhost:4000/syllabus`);
+                    const res = await axios.get(`https://backend-eta-lac.vercel.app/syllabus`);
                     setCourseData(res.data);
             } catch (error) {
                 console.log(error);

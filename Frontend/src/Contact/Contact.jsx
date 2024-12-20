@@ -14,7 +14,7 @@ const Contact = () => {
         try {
             console.log("hey");
             
-            const response = await axios.post("http://localhost:4000/contact", data, {
+            const response = await axios.post("https://backend-eta-lac.vercel.app/contact", data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

@@ -11,7 +11,7 @@ const Paper_pdf = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("http://localhost:4000/course", `${subj}`, {
+                const response = await axios.post("https://backend-eta-lac.vercel.app/course", `${subj}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Paper_pdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/notespdf`)
+                const response = await axios.get(`https://backend-eta-lac.vercel.app/notespdf`)
                 setCourseData(response.data)
             } catch (error) {
                 console.log(error)
