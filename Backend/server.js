@@ -1,106 +1,100 @@
 import express from "express";
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
-import courseroute from "./Route/Course.route.js"
-import paperroute from "./Route/Papers.route.js"
-import cors from "cors"
+import cors from "cors";
 import bodyParser from "body-parser";
-import syllabusroute from "./Route/Syllabus.route.js"
-import searchroute from "./Route/Search.route.js"
-import messageroute from "./Route/Message.route.js"
-import notesroute from "./Route/Notespdf.route.js"
-import paperpdfroute from "./Route/PaperPdf.route.js"
 
-const app = express()
-app.use(cors())
+import courseroute from "./Route/Course.route.js";
+import paperroute from "./Route/Papers.route.js";
+import syllabusroute from "./Route/Syllabus.route.js";
+import searchroute from "./Route/Search.route.js";
+import messageroute from "./Route/Message.route.js";
+import notesroute from "./Route/Notespdf.route.js";
+import paperpdfroute from "./Route/PaperPdf.route.js";
+
+const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 3000;
+const Mongo = process.env.Mongo;
 
-const PORT = process.env.PORT || 3000
-const Mongo = process.env.Mongo
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
 
-app.get('/', function (req, res) {
-    res.send('Hello World')
-})
+mongoose.connect(Mongo, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected to MongoDB");
+}).catch((error) => {
+    console.error("MongoDB connection error:", error);
+});
 
-try {
-    mongoose.connect(Mongo, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    console.log("connected to Mongo");
+let postData = null;
 
-} catch (error) {
-    console.log(error);
-
-}
-
-let postData = null
-
-app.post('/course',bodyParser.text(), (req, res, next) => {
-    postData = req.body 
+app.post('/course', bodyParser.text(), (req, res) => {
+    postData = req.body;
     res.status(201).send({ message: 'Course created successfully' });
 });
 
 app.use('/notes', (req, res, next) => {
-    const name = postData || "CSIT"
+    const name = postData || "CSIT";
     req.name = name;
     next();
 });
 
 app.use('/notes', courseroute);
 
-
 app.use("/papers", (req, res, next) => {
-    const name = postData 
+    const name = postData;
     req.name = name;
-    next()
-}
-)
+    next();
+});
 
-app.use("/papers", paperroute)
+app.use("/papers", paperroute);
 
 app.use("/syllabus", (req, res, next) => {
-    const name = postData
+    const name = postData;
     req.name = name;
-    next()
-}
-)
+    next();
+});
 
-app.use("/syllabus", syllabusroute)
+app.use("/syllabus", syllabusroute);
 
-app.use("/search", searchroute)
+app.use("/search", searchroute);
 
+let message = null;
 
-let message = null
-
-app.post('/contact', (req, res,next) => {
-    app.use(bodyParser.json())
-    message = req.body
+app.post('/contact', (req, res) => {
+    message = req.body;
     console.log(req.body);
     console.log(message);
     res.status(201).send({ message: 'Message sent successfully' });
-})
+});
 
-app.use("/contact", messageroute)
-
-
+app.use("/contact", messageroute);
 
 app.use("/notespdf", (req, res, next) => {
-    const name = postData || "Statistics"
+    const name = postData || "Statistics";
     req.name = name;
     console.log(req.name);
-    next()
-})
-app.use("/notespdf",notesroute)
+    next();
+});
+app.use("/notespdf", notesroute);
 
 app.use("/paperpdf", (req, res, next) => {
-    const name = postData || "First Sem Paper"
+    const name = postData || "First Sem Paper";
     req.name = name;
     console.log(req.name);
-    next()
-})
-app.use("/paperpdf",paperpdfroute)
+    next();
+});
+app.use("/paperpdf", paperpdfroute);
 
-app.listen(PORT)    
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+export default app;
