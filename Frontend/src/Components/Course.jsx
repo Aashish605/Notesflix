@@ -9,7 +9,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("http://localhost:4000/course", `${course}`, {
+                const response = await axios.post("https://backend-eta-lac.vercel.app/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -25,7 +25,7 @@ const Syllabus_list = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                const res = await axios.get(`http://localhost:4000/syllabus`);
+                const res = await axios.get(`https://backend-eta-lac.vercel.app/notes`);
                 setCourseData(res.data);
             } catch (error) {
                 console.log(error);
@@ -38,20 +38,20 @@ const Syllabus_list = () => {
         <div>
             {CourseData ? (
                 <div>
-                    <h1 className="text-center text-4xl mt-16">{CourseData.title} Syllabus</h1>
+                    <h1 className="text-center text-4xl mt-16">{CourseData.title} Notes</h1>
                     <div className="w-[90vw] ">
                         {CourseData.data && CourseData.data.map((i) => (
                             <div key={i.sem} className="m-8 w-full">
                                 <div className="w-[80vw] border-2 my-4 border-slate-800"></div>
                                 <h1 className="text-3xl mt-4">{i.sem} Syllabus</h1>
-                                <div className="w-[80vw] flex flex-wrap gap-8 my-4 justify-center">
+                                <div className="w-[80vw] flex flex-wrap gap-8 my-4">
                                     {i.subjects.map((e) => (
                                         <NavLink
                                             to={`/syllabus/${CourseData.title}/${e.name}`}
                                             key={e.name}
-                                            className="no-underline text-inherit flex-grow"
+                                            className="no-underline text-inherit"
                                         >
-                                            <div className="bg-primary cursor-pointer group w-[300px] px-4 h-[15vh] shadow-md rounded-md grow flex items-center justify-center text-2xl relative">
+                                            <div className="bg-primary cursor-pointer group w-[270px] px-4 h-[15vh] shadow-md rounded-md grow flex items-center justify-center text-2xl relative">
                                                 <span className='group-hover:z-10'>{e.name}</span>
                                                 <div className="absolute group-hover:z-0 w-[102%] h-[103%] -z-10 rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
                                             </div>
