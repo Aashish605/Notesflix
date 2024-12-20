@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 const Mongo = process.env.Mongo;
 
 app.get('/', (req, res) => {
-    res.send('Hello World ashish');
+    res.send('Hello World i am aashish');
 });
 
 mongoose.connect(Mongo, {
