@@ -10,7 +10,7 @@ const NotePdf = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("http://localhost:4000/course", `${subj}`, {
+                const response = await axios.post("https://notesflix-s5ki.vercel.app//course", `${subj}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -26,7 +26,7 @@ const NotePdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/Notepdf`)
+                const response = await axios.get(`https://notesflix-s5ki.vercel.app//Notepdf`)
                 setCourseData(response.data)
                 console.log(response.data)
             } catch (error) {

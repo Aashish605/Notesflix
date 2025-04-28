@@ -11,7 +11,7 @@ const SyllabusPdf = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("http://localhost:4000/syllabus", { course,subj}, {
+                const response = await axios.post("https://notesflix-s5ki.vercel.app//syllabus", { course,subj}, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -27,7 +27,7 @@ const SyllabusPdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/Syllabuspdf`)
+                const response = await axios.get(`https://notesflix-s5ki.vercel.app//Syllabuspdf`)
                 setCourseData(response.data)
                 console.log(response.data)
             } catch (error) {
