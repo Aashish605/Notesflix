@@ -9,17 +9,16 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from "./Home/Home.jsx";
-import Notes from "./Notes/Notes.jsx";
-import Pastpapers from "./PastPaper/Past.jsx";
+import Note from "./Note/Note.jsx";
+import Past from "./PastPaper/Past.jsx";
 import Aboutus from "./AboutUS/About.jsx";
-import Contact from "./Contact/Contact.jsx";
 import Syllabus from "./Syllabus/Syllabus.jsx";
-import Syllabus_list from './Components/Syllabus_list.jsx';
-import Course from './Components/Course.jsx';
-import Pdf from './Components/Pdf.jsx';
-import PastTemp from "./Components/PastTemp.jsx"
-import Paper_pdf from './Components/Paper_pdf.jsx';
-import Syllabus_pdf from './Components/Syllabus_pdf.jsx';
+import Syllabuslist from './Syllabus/Syllabuslist.jsx';
+import Notelist from './Note/Notelist.jsx';
+import NotePdf from './Note/NotePdf.jsx';
+import Pastlist from "./PastPaper/Pastlist.jsx"
+import PastPdf from './PastPaper/PastPdf.jsx';
+import SyllabusPdf from './Syllabus/SyllabusPdf.jsx';
 import Serach from './Components/Serach.jsx';
 import Error from './Components/Error.jsx';
 
@@ -27,17 +26,16 @@ const router = createBrowserRouter(
   createRoutesFromElements(
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="notes" element={<Notes />} />
-        <Route path="pastpapers" element={<Pastpapers />} />
-        <Route path="pastpapers/:course" element={<PastTemp/>} />
+        <Route path="Note" element={<Note />} />
+        <Route path="pastpapers" element={<Past />} />
+        <Route path="pastpapers/:course" element={<Pastlist/>} />
         <Route path="aboutus" element={<Aboutus />} />
         <Route path="syllabus" element={<Syllabus />} />
-        <Route path="syllabus/:course" element={<Syllabus_list />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="notes/:course" element={<Course />} />
-        <Route path="notes/:course/:subj" element={<Pdf />} />
-        <Route path="pastpapers/:course/:subj" element={<Paper_pdf />} />
-        <Route path="Syllabus/:course/:subj" element={<Syllabus_pdf/>} />
+        <Route path="syllabus/:course" element={<Syllabuslist />} />
+        <Route path="Note/:course" element={<Notelist />} />
+        <Route path="Note/:course/:subj" element={<NotePdf />} />
+        <Route path="pastpapers/:course/:subj" element={<PastPdf />} />
+        <Route path="Syllabus/:course/:subj" element={<SyllabusPdf/>} />
         <Route path='search/:data' element={<Serach/>} />
         <Route path='maintenance' element={<Error/>} />
       </Route>

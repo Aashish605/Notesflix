@@ -48,7 +48,7 @@ const Navbar = () => {
                         </div>
                         <ul className="">
                             <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/'>Home</NavLink></li>
-                            <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/notes'>Notes</NavLink></li>
+                            <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/Note'>Note</NavLink></li>
                             <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/pastpapers'>Past Papers</NavLink></li>
                             <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/syllabus'>Syllabus</NavLink></li>
                             <li className="mx-4 my-10"><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/aboutus'>About Us</NavLink></li>
@@ -59,15 +59,15 @@ const Navbar = () => {
             </div>
             <div className='sticky top-0 z-10' >
             <div className=" hidden   md:flex justify-between items-center h-[9vh] w-full bg-primary shadow-md ">
-            <NavLink to=''><img src="/logo.png" alt="Notesfelix logo" className=" lg:w-[45%] md:w-[60%] " /></NavLink>
+            <NavLink to=''><img src="/logo.png" alt="Notefelix logo" className=" lg:w-[45%] md:w-[60%] " /></NavLink>
                     <div className="">
                         <ul className="flex flex-col md:flex-row gap-7 text-[1.05rem] ">
                             <li className=" px-3 flex items-center  " ><NavLink className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/'>Home</NavLink></li>
-                            <li className="relative px-3 py-4 flex items-center group"><NavLink className={({ isActive }) => ` group-hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/notes'>Notes</NavLink><img src="/arrow.png" alt="arrow" className='  group-hover:rotate-180 duration-300 ease-in-out '  />
+                            <li className="relative px-3 py-4 flex items-center group"><NavLink className={({ isActive }) => ` group-hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} to='/Note'>Note</NavLink><img src="/arrow.png" alt="arrow" className='  group-hover:rotate-180 duration-300 ease-in-out '  />
                                 <ul className="absolute left-[-2rem] top-full shadow-xl bg-primary rounded-md hidden group-hover:block  ">
-                                    <li className="px-10 py-4"><NavLink to='/notes/CSIT' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BSC.CSIT</NavLink></li>
-                                    <li className="px-10 py-4"><NavLink to='/notes/BCA' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BCA</NavLink></li>
-                                    <li className="px-10 py-4"><NavLink to='/notes/BE' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BE</NavLink></li>
+                                    <li className="px-10 py-4"><NavLink to='/Note/CSIT' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BSC.CSIT</NavLink></li>
+                                    <li className="px-10 py-4"><NavLink to='/Note/BCA' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BCA</NavLink></li>
+                                    <li className="px-10 py-4"><NavLink to='/Note/BE' className={({ isActive }) => ` hover:text-slate-600 ${isActive ? " text-tertiary hover:text-tertiary" : ""}`} >BE</NavLink></li>
                                 </ul>
                             </li>
                             <li className=" group relative px-3 flex items-center "><NavLink className={({ isActive }) => ` text-center group-hover:text-slate-600 ${isActive ? "  text-tertiary hover:text-tertiary" : ""}`} to='/pastpapers'>Past Papers</NavLink><img src="/arrow.png" alt="arrow" className=' group-hover:rotate-180 duration-300 ease-in-out '  />

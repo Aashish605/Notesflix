@@ -11,7 +11,7 @@ const Search = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get("https://backend-eta-lac.vercel.app/search");
+                const response = await axios.get("http://localhost:4000/search");
                 setData(response.data);
                 if (data) {
                     performSearch(data, response.data);
@@ -71,24 +71,24 @@ const Search = () => {
                         <div className='flex flex-wrap mx-5'>
                             {
                                 result.length > 0 ? result.map(item => (
-                                    <div key={item.id} className='px-5 text-2xl flex flex-wrap md:gap-10'>
+                                    <span key={item.id} className='px-5 text-2xl flex flex-wrap md:gap-10'>
                                         {item.data.map(element => (
                                             <span key={element.sem} className='flex flex-wrap md:gap-10' >
                                                 {element.subjects.map(subject => (
                                                     <span key={subject.name} className='' >
                                                             <NavLink to={`/${item.type}/${item.title}/${subject.name}`}>
-                                                                <div className="bg-primary  text-black cursor-pointer group w-[210px] h-[25vh] shadow-md my-9 rounded-md flex items-center justify-center text-2xl relative">
-                                                                    <div className='text-center px-4 group-hover:z-10'>{subject.name} {item.title} </div>
-                                                                    <div className="absolute group-hover:z-0 w-[102%] h-[103%] -z-10 rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></div>
-                                                                </div>
+                                                                <span className="bg-primary  text-black cursor-pointer group w-[210px] h-[25vh] shadow-md my-9 rounded-md flex items-center justify-center text-2xl relative">
+                                                                    <span className='text-center px-4 group-hover:z-10'>{subject.name} {item.title} </span>
+                                                                    <span className="absolute group-hover:z-0 w-[102%] h-[103%] -z-10 rounded-lg bg-gradient-to-r from-blue-200 to-cyan-300"></span>
+                                                                </span>
                                                             </NavLink>
                                                     </span>
                                                 ))}
                                             </span>
                                         ))}
-                                    </div>
+                                    </span>
                                 )) :
-                                    <div className='w-full mx-auto'>
+                                    <div className='w-full mx-auto flex justify-center'>
                                         <img src="/nodata.jpg" alt="No Data found" />
                                     </div>
                             }
