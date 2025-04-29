@@ -9,7 +9,7 @@ const Notelist = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app//course", `${course}`, {
+                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -25,7 +25,7 @@ const Notelist = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                const res = await axios.get(`https://notesflix-s5ki.vercel.app//Notelist`);
+                const res = await axios.get(`https://notesflix-s5ki.vercel.app/Notelist`);
                 setCourseData(res.data);
             } catch (error) {
                 console.log(error);

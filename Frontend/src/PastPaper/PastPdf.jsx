@@ -11,7 +11,7 @@ const PastPdf = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app//course", `${subj}`, {
+                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${subj}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const PastPdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`https://notesflix-s5ki.vercel.app//Pastpdf`)
+                const response = await axios.get(`https://notesflix-s5ki.vercel.app/Pastpdf`)
                 setCourseData(response.data)
             } catch (error) {
                 console.log(error)

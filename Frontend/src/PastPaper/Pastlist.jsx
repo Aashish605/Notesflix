@@ -10,7 +10,7 @@ const Pastlist = () => {
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app//course", `${course}`, {
+                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Pastlist = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                const res = await axios.get(`https://notesflix-s5ki.vercel.app//Pastlist`);
+                const res = await axios.get(`https://notesflix-s5ki.vercel.app/Pastlist`);
                 setCourseData(res.data);
                 console.log(res.data);
             } catch (error) {
