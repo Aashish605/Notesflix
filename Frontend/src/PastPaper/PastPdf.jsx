@@ -34,7 +34,7 @@ const PastPdf = () => {
             }
         }
         getdata()
-    }, [])
+    }, [subj])
 
 
     return (

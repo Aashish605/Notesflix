@@ -22,7 +22,7 @@ const SyllabusPdf = () => {
             }
         }
         sendData()
-    }, [subj])
+    }, [subj,course])
 
     useEffect(() => {
         const getdata = async () => {
@@ -35,7 +35,7 @@ const SyllabusPdf = () => {
             }
         }
         getdata()
-    }, [])
+    }, [subj,course])
     return (
         <>
             {

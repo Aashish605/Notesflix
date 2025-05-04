@@ -34,7 +34,7 @@ const NotePdf = () => {
             }
         }
         getdata()
-    }, [])
+    }, [subj])
 
     return (
         <>
