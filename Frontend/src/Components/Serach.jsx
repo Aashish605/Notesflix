@@ -11,7 +11,7 @@ const Search = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get("https://notesflix-s5ki.vercel.app/search");
+                const response = await axios.get("http://localhost:4000/search");
                 setData(response.data);
                 if (data) {
                     performSearch(data, response.data);

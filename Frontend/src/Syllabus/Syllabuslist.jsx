@@ -6,12 +6,12 @@ const Syllabuslist = () => {
 
     const { course } = useParams();
     
-    const [CourseData, setCourseData] = useState({});
+    const [CourseData, setCourseData] = useState(null);
 
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${course}`, {
+                const response = await axios.post("http://localhost:4000/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -28,7 +28,7 @@ const Syllabuslist = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                    const res = await axios.get(`https://notesflix-s5ki.vercel.app/Syllabuslist`);
+                    const res = await axios.get(`http://localhost:4000/Syllabuslist`);
                     setCourseData(res.data);
             } catch (error) {
                 console.log(error);
@@ -41,7 +41,7 @@ const Syllabuslist = () => {
         <div>
 {
                 CourseData ? 
-                <div>
+                <div className="min-h-[100vh] ">
                     <h1 className="text-center text-4xl mt-16">{CourseData.title} Syllabus</h1>
                     <div className="w-[90vw] ">
                         {CourseData.data && CourseData.data.map((i) => (

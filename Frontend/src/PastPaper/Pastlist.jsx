@@ -5,12 +5,12 @@ import axios from "axios";
 const Pastlist = () => {
     const { course } = useParams();
 
-    const [CourseData, setCourseData] = useState({});
+    const [CourseData, setCourseData] = useState(null);
 
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${course}`, {
+                const response = await axios.post("http://localhost:4000/course", `${course}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -27,7 +27,7 @@ const Pastlist = () => {
     useEffect(() => {
         const getcourse = async () => {
             try {
-                const res = await axios.get(`https://notesflix-s5ki.vercel.app/Pastlist`);
+                const res = await axios.get(`http://localhost:4000/Pastlist`);
                 setCourseData(res.data);
                 console.log(res.data);
             } catch (error) {
@@ -41,7 +41,7 @@ const Pastlist = () => {
         <>
             {
                 CourseData ?
-                    <div>
+                    <div className="min-h-[100vh] ">
                         <h1 className="text-center text-4xl mt-16">{CourseData.title} Papers </h1>
                         <div className="w-[90vw] ">
                             {CourseData.data && CourseData.data.map((i) => (

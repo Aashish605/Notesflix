@@ -11,6 +11,7 @@ export const SidebarProvider = ({ children }) => {
             if (isSidebarOpen && !e.target.closest('.sidebar')) {
                 setIsSidebarOpen(false);
             }
+            
         };
 
         document.addEventListener('click', handleClickOutside);

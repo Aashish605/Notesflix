@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom'
 
 
 const Footer = () => {
-    const {closeSidebar} = useSidebar()
+    const {setIsSidebarOpen } = useSidebar()
 
     return (
         <>
-        <div onClick={closeSidebar} className="w-full flex flex-col items-center justify-between  bg-primary">
+        <div onClick={()=>setIsSidebarOpen(false)} className="w-full flex flex-col items-center justify-between  bg-primary">
             <img src="/logo.png" alt="logo" className="w-[30%] h-[35%] sm:w-[20%] lg:w-[15%] "  />
             <p className='flex items-center font-semibold text-sm'>Created with  <box-icon size="sm" color="red" type="solid" animation="tada" name="heart"></box-icon> by Aashish and Arjun  </p>
             <p className='text-sm font-semibold '>Copyright © 2024 - All right reserved</p>

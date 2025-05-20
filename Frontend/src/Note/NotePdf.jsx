@@ -5,12 +5,12 @@ import "../Style/Style.css"
 const NotePdf = () => {
     const { subj } = useParams()
 
-    const [CourseData, setCourseData] = useState()
+    const [CourseData, setCourseData] = useState(null)
 
     useEffect(() => {
         const sendData = async () => {
             try {
-                const response = await axios.post("https://notesflix-s5ki.vercel.app/course", `${subj}`, {
+                const response = await axios.post("http://localhost:4000/course", `${subj}`, {
                     headers: {
                         'Content-Type': 'text/plain',
                     },
@@ -26,7 +26,7 @@ const NotePdf = () => {
     useEffect(() => {
         const getdata = async () => {
             try {
-                const response = await axios.get(`https://notesflix-s5ki.vercel.app/Notepdf`)
+                const response = await axios.get(`http://localhost:4000/Notepdf`)
                 setCourseData(response.data)
                 console.log(response.data)
             } catch (error) {
@@ -40,7 +40,7 @@ const NotePdf = () => {
         <>
             {
                 CourseData ?
-                    <div className="h-full w-[90vw] md:w-[80vw] mx-auto bg-primary my-8 flex flex-col items-center ">
+                    <div className="h-full min-h-[100vh]  w-[90vw] md:w-[80vw] mx-auto bg-primary my-8 flex flex-col items-center ">
                         <h1 className="text-4xl my-8 font-semibold mx-14 text-center">Note of {CourseData.title} </h1>
                         <p className="mt-8 text-center mb-16 text-2xl"> {CourseData.description} </p>
                         {CourseData.data.map((e) => {
