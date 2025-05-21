@@ -35,6 +35,9 @@ mongoose.connect(Mongo, {
 
 let postData = null;
 
+res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+res.status(200).json(data);
+
 app.post('/course', (req, res) => {
     postData = req.body;
     res.status(201).send({ message: 'Course created successfully' });
