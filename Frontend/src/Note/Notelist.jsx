@@ -38,9 +38,8 @@ const Notelist = () => {
 
     if (loading) {
         return (
-            <div className="mt-[10vh] flex flex-col justify-center items-center">
-                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
-                <span className=" h-[50vh] w-full text-center  text-3xl ">Loading  data...</span>
+            <div className=" md:my-0 my-20 h-[50vh] md:h-full  flex items-center justify-between  ">
+                <img src="/Loading.jpg" className='rounded-md mx-auto' alt="No Data found" />
             </div>
         );
     }

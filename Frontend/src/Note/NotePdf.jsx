@@ -6,6 +6,7 @@ const NotePdf = () => {
     const { subj } = useParams()
 
     const [CourseData, setCourseData] = useState(null)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const sendData = async () => {
@@ -29,12 +30,22 @@ const NotePdf = () => {
                 const response = await axios.get(`https://notesflix-s5ki.vercel.app/Notepdf`)
                 setCourseData(response.data)
                 console.log(response.data)
+                setLoading(false)
             } catch (error) {
                 console.log(error)
             }
         }
         getdata()
     }, [subj])
+
+    
+    if (loading) {
+        return (
+            <div className=" md:my-0 my-20 h-[50vh] md:h-full  flex items-center justify-between  ">
+                <img src="/Loading.jpg" className='rounded-md mx-auto' alt="No Data found" />
+            </div>
+        );
+    }
 
     return (
         <>
