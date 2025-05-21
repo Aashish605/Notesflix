@@ -5,6 +5,7 @@ import axios from "axios";
 const Notelist = () => {
     const { course } = useParams();
     const [CourseData, setCourseData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const sendData = async () => {
@@ -27,12 +28,22 @@ const Notelist = () => {
             try {
                 const res = await axios.get(`https://notesflix-s5ki.vercel.app/Notelist`);
                 setCourseData(res.data);
+                setLoading(false)
             } catch (error) {
                 console.log(error);
             }
         };
         getcourse();
     }, [course]);
+
+    if (loading) {
+        return (
+            <div className="mt-[10vh] flex flex-col justify-center items-center">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+                <span className=" h-[50vh] w-full text-center  text-3xl ">Loading  data...</span>
+            </div>
+        );
+    }
 
     return (
         <div >
