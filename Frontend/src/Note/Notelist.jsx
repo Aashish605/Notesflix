@@ -39,7 +39,7 @@ const Notelist = () => {
     if (loading) {
         return (
             <div className=" md:my-0 my-20 h-[50vh] md:h-full  flex items-center justify-between  ">
-                <img src="/Loading.jpg" className='rounded-md mx-auto' alt="No Data found" />
+                <img src="/Loading.png" className='rounded-md mx-auto' alt="No Data found" />
             </div>
         );
     }
